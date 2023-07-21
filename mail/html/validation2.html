@@ -1,0 +1,30 @@
+  <div class="titles">
+  <h1>Bem-vindo ao <strong>Protocolar.IFPA!!!</strong></h1>
+  <h3>Estamos quase finalizando! Siga o passo a passo abaixo e sinta-se a vontade para mudar o seu campus.</h3>
+ </div>
+ 
+<div class="paragrafo">
+  <p>- Para prosseguir com o seu cadastro, por favor clique no link Abaixo. <br>- Logo em seguida volte a tela de login e preencha os campos com suas iniciais.</p>
+</div>
+<script>
+    const values = document.querySelector("#values").value
+  async function send(){
+    const options = {
+      method: "POST",
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      },
+      body:JSON.stringify({
+       query:"validation",
+       values
+      })
+    }
+    
+    const data = await fetch("https://apilarici.dennisargemiro.repl.co",JSON.parse(JSON.stringify(options)))
+    console.log(data)
+  }
+</script>
+<div class="button">
+  <button onclick="send()">Validar Cadastro</button>  
+</div>

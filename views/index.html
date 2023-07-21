@@ -1,0 +1,18 @@
+<button type="button" onclick="sendMail()">submit</button>
+
+<script src='https://smtpjs.com/v3/smtp.js'></script>
+<script>
+    function sendMail() {
+     Email.send({
+        Host : 'smtp.elasticemail.com',
+        Username : 'dennisarg2011@gmail.com',
+        Password : '141553D7AB365B129AAC8B6A22D66232E84F',
+        To : 'dennisarg123@gmail.com',
+        From : 'dennisarg2011@gmail.com',
+        Subject : 'This is the subject',
+        Body : 'And this is the body'
+      }).then((responser)=>{
+      console.log("Vamo")
+      })
+    }
+</script>
