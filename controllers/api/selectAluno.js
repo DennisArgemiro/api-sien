@@ -4,9 +4,9 @@ const router = express.Router();
 
 
 router.post("/selectAluno", async (req, res) => {
-  const { matricula } = req.body.content
-  const res = await supabase.selectAluno(matricula)
-  res.json(res)
+  const { matricula } = req.body
+  const response = await supabase.selectAluno(matricula)
+  res.json(response)
 })
 
 module.exports = router;

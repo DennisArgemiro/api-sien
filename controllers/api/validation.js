@@ -3,11 +3,10 @@ const supabase = require("../../supabase/supabase")
 const router = express.Router();
 
 
-router.post("/validation", async (req, res)=>{
-    const res = await supabase.insertAluno(req.body)
-    res != 200 ? { status: 400 } : { status: 200 }
-
-    res.json(res != 200 ? { status: 400 } : { status: 200 })   
+router.get("/validation", async (req, res) => {
+    const response = await supabase.insertAluno({values: req.query.values})
+    response != 200 ? { status: 400 } : { status: 200 }
+    res.json(response != 200 ? { status: 400 } : { status: 200 })
 
 })
 

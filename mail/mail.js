@@ -25,7 +25,7 @@ module.exports = {
     
     const html = await require("./merge").txt(params, nome)
     const response = await transporter.sendMail({
-      from: `${CONFIG.address}`, // sender address
+      from: `"SIEN" <${CONFIG.address}>`, // sender address
       to: email, // list of receivers
       subject: `Finalize o seu cadastro, ${nome}!`, // Subject line
       // text:"",

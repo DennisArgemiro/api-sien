@@ -6,9 +6,9 @@ const router = express.Router();
 router.post("/answerPedagogo", async (req, res)=>{
     const {idSolicitacao, pedagogo, resposta} = content.content
 
-      const res = await supabase.awnserPedagogo(idSolicitacao, pedagogo, resposta)
+      const response = await supabase.awnserPedagogo(idSolicitacao, pedagogo, resposta)
       
-      res.json(res)   
+      res.json(response)   
 })
 
 module.exports = router;

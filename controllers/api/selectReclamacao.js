@@ -3,14 +3,14 @@ const supabase = require("../../supabase/supabase")
 const router = express.Router();
 
 router.post("/selectReclamacao", async (req, res) => {
-    const { param, value } = req.body.content
-    var res = undefined
+    const { param, value } = req.body
+    var response = undefined
     if (param == "id" || param == "matricula") {
-        res = await supabase.selectReclamacao(value)
+        response = await supabase.selectReclamacao(value)
     } else if (param == "none") {
-        res = await supabase.selectReclamacao(param)
+        response = await supabase.selectReclamacao(param)
     }
-    res.json(res)
+    res.json(response)
 })
 
 module.exports = router;

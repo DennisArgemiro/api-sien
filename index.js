@@ -1,5 +1,5 @@
 const Express = require("express");
-const api = require("./api")
+// const api = require("./api")
 const cors = require("cors");
 
 //Controller's imports
@@ -13,16 +13,6 @@ const selectReclamacaoController = require("./controllers/api/selectReclamacao")
 const validationController =require("./controllers/api/validation")
 
 const app = Express();
-
-//Controller's uses
-app.use("/", answerPedagogoController)
-app.use("/", answerRequestController)
-app.use("/", loginController)
-app.use("/", registerController)
-app.use("/", requestController)
-app.use("/", selectAlunoController)
-app.use("/", selectReclamacaoController)
-app.use("/", validationController)
 
 //CORS
 const corsOptions = {
@@ -39,7 +29,19 @@ app.use((req, res, next)=>{
 //Server Config
 app.use(Express.json());
 app.use(Express.urlencoded());
-app.use("/", api);
+
+//Controller's uses
+app.use("/", answerPedagogoController)
+app.use("/", answerRequestController)
+app.use("/", loginController)
+app.use("/", registerController)
+app.use("/", requestController)
+app.use("/", selectAlunoController)
+app.use("/", selectReclamacaoController)
+app.use("/", validationController)
+
+
+// app.use("/", api);
 
 app.listen("3000", () => {
   console.log("online");
