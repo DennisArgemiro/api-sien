@@ -2,7 +2,7 @@ const fs = require("fs")
 
 module.exports = {
   txt: async (params, nome) => {
-    const head = await fs.readFileSync(__dirname + "/../html/header.html", "utf-8")
+    // const head = await fs.readFileSync(__dirname + "/../html/header.html", "utf-8")
     const body = `<body style="font-family: Arial, sans-serif;">
   <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
     <h2 style="text-align: center;">Email de Confirmação de Cadastro</h2>

@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer")
-const CONFIG = require("./config")
+const CONFIG = require("../config")
 
 const transporter = nodemailer.createTransport({
   host: CONFIG.host,
@@ -23,7 +23,7 @@ module.exports = {
       values: `${nome},${matricula},${dataNasc},${cell} ,${email},${curso},${turma},${senha}`
     }
     
-    const html = await require("./mail/js/merge").txt(params, nome)
+    const html = await require("./merge").txt(params, nome)
     const response = await transporter.sendMail({
       from: `${CONFIG.address}`, // sender address
       to: email, // list of receivers
