@@ -44,3 +44,4 @@ module.exports = {
     return response
   }
 }
+//Sistema de Gestão de Ensino e Aprendizagem (SIGEA)
