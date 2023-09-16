@@ -6,7 +6,7 @@ router.post("/selectReclamacao", async (req, res) => {
     const { param, value } = req.body
     var response = undefined
     if (param == "id" || param == "matricula") {
-        response = await supabase.selectReclamacao(value)
+        response = await supabase.selectReclamacao(param, value)
     } else if (param == "none") {
         response = await supabase.selectReclamacao(param)
     }

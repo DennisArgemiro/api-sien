@@ -50,15 +50,22 @@ module.exports = {
       }
     }
   },
-  selectReclamacao: async (content) => {
-    if (content != "none") {
+  selectReclamacao: async (param, content) => {
+    if (param == "id") {
       const { data, error } = await supabase.from("Reclamacao").select().eq("idReclamacao", content)
       if (error) {
         return error
       } else {
         return data[0]
       }
-    } else {
+    } else if (param == "matricula") {
+      const { data, error } = await supabase.from("Reclamacao").select().eq("Aluno_matricula", content)
+      if (error) {
+        return error
+      } else {
+        return data
+      }
+    }else {
       const { data, error } = await supabase.from("Reclamacao").select()
       if (error) {
         return error

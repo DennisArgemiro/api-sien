@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.post("/answerPedagogo", async (req, res)=>{
-    const {idSolicitacao, pedagogo, resposta} = content.content
+    const {idSolicitacao, pedagogo, resposta} = req.body
 
       const response = await supabase.awnserPedagogo(idSolicitacao, pedagogo, resposta)
       
